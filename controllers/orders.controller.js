@@ -18,7 +18,7 @@ class OrderController{
     async getOrderId(req, res) {
         const id = req.params.id;
         const getOrderById = await db.query('SELECT * from orders WHERE id = ($1)', [id]);
-        res.json(getOrderById.rows);
+        res.json(getOrderById.items_id);
         console.log(id)
     }
 }
