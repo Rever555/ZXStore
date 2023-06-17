@@ -15,6 +15,12 @@ class OrderController{
         res.json(getOrderId.rows);
         console.log(user_id)
     }
+    async getOrderId(req, res) {
+        const id = req.params.id;
+        const getOrderById = await db.query('SELECT * from orders WHERE id = ($1)', [id]);
+        res.json(getOrderById.rows);
+        console.log(id)
+    }
 }
 
 module.exports = new OrderController()
