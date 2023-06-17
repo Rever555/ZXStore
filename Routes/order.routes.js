@@ -4,5 +4,5 @@ const OrderController = require("../controllers/orders.controller")
 
 router.post("/orders", OrderController.createOrder)
 router.get("/orders/:user_id", OrderController.getOrder)
-
+router.get("/orders/:id", OrderController.getOrderId)
 module.exports = router
